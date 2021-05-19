@@ -1,0 +1,16 @@
+<main>
+  <div class="search">
+    <input [(ngModel)]="searchTerm" type="text">
+    <button *ngIf="isEmptyArray(this.albums)" (click)="getAlbums()">Get albums</button>
+  </div>
+  <section>
+    <article *ngFor="let album of albums">
+      <img src="{{album.strAlbumThumb}}" alt="">
+      <h3>{{album.strAlbum}}</h3>
+      <p>{{album.strArtist}}</p>
+    </article>
+    <!-- <app-card *ngFor="let album of albums" [album]="album"></app-card> -->
+  </section>
+</main>
+
+<!-- <p *ngFor="let album of albums">{{album.strAlbum}}</p> -->
